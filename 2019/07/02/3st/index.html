@@ -22,7 +22,7 @@
     <meta name="description" content="vue,vue-cli,webpack">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>快速搭建基于vue-cli的脚手架项目 · 路翕元Shay的小笔记</title>
+    <title>浏览器从输入网址到页面呈现的过程 · 路翕元Shay的小笔记</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">路翕元有点迷</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">快速搭建基于vue-cli的脚手架项目</a>
+                <a href="#" class="post-name">浏览器从输入网址到页面呈现的过程</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            快速搭建基于vue-cli的脚手架项目
+            浏览器从输入网址到页面呈现的过程
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">783</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.7k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/02/14</span>
+                    <span class="post-intro-time">2019/07/02</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,49 +395,46 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>vue-cli是一个基于webpack的前端框架脚手架，它将项目中经常用到的插件都做了相关配置，且打包和编译也都配置好了，你只需要安装相关的依赖就可以，这大大方便了不熟悉webpack的前端开发人员。</p>
-<h1 id="一、安装-node"><a href="#一、安装-node" class="headerlink" title="一、安装 node"></a>一、安装 node</h1><p>之所以要安装node，是因为webpack是运行在node环境中的一个工具，这里只要安装了就行了。</p>
-<p><a href="http://nodejs.cn/download/" target="_blank" rel="noopener">node安装地址在这里</a></p>
-<p>按系统类型下载相应的包，然后按步骤安装即可，安装完毕后，在命令行工具中执行: node -v，执行结果如果显示出版本号则安装成功。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v10.14.2</span><br></pre></td></tr></table></figure></p>
-<p>安装完node的同时npm也已经安装完毕了，执行: npm -v可查看npm的版本。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm -v</span><br><span class="line">6.4.1</span><br></pre></td></tr></table></figure>
-<p>npm默认的源是在国外的，所以直接使用npm安装插件会很慢，甚至下载失败，网上很多都建议安装一个cnpm，这里我建议直接将npm的源更改为国内就好了，命令行中一行代码的事。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<h1 id="二、-安装-vue-cli"><a href="#二、-安装-vue-cli" class="headerlink" title="二、 安装 vue-cli"></a>二、 安装 vue-cli</h1><p>命令行执行: npm install -g vue-cli，这里的 -g 的意思是全局安装。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g vue-cli</span><br></pre></td></tr></table></figure>
-<p>安装完成后命令行执行: vue -V 即可查看vue-cli版本（大写的V）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vue -V</span><br><span class="line">2.9.6</span><br></pre></td></tr></table></figure>
-<h1 id="三、-初始化项目"><a href="#三、-初始化项目" class="headerlink" title="三、 初始化项目"></a>三、 初始化项目</h1><p>命令行执行: vue init webpack shay (shay是你的项目名，也就是 vue init webpack *)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vue init webpack shay</span><br></pre></td></tr></table></figure>
-<p>接下来按照提示步骤填写或者选择就好了，这里以vue-cli 2.96为例</p>
-<ul>
-<li>Project name<br> 项目的名字。</li>
-<li>Project description<br> 项目的描述。</li>
-<li>Author<br> 作者名。</li>
-<li>Runtime + Compiler || Runtime Only<br> 默认回车即可，区别详见<a href="https://www.jianshu.com/p/466510d84e36" target="_blank" rel="noopener">了解vue里的Runtime Only和Runtime+Compiler</a>。</li>
-<li>Install vue-router? (Y/n)<br> 当然是选Y，vue-router在每个项目中都是必装的，如果这里没安装，那在初始化项目后单独安装也行。</li>
-<li>Use ESLint to lint your code? (Y/n)<br> 是否使用esLint去规范你的代码，这里建议选Y。</li>
-<li>Standard || Airbnb || none<br> 配置js的风格，这里选择第一个标准就行了。</li>
-<li>Set up unit tests (Y/n)<br> 是否安装单元测试，如果刚入门的话可以不安装。</li>
-<li>Setup e2e tests with Nightwatch? (Y/n)<br> 是否安装e2e测试框架Nightwatch，可以不安装，减小项目体积。</li>
-<li>Should we run <code>npm install</code> for you after the project has been created? (recom<br>mended)<br> 是否运行npm install安装项目中所需依赖，选择第一个’Yes, use NPM’。</li>
-</ul>
-<h1 id="四、启动项目"><a href="#四、启动项目" class="headerlink" title="四、启动项目"></a>四、启动项目</h1><p>当前位置切换到初始化的项目中,如果之前没有运行<code>npm install</code>安装依赖则先安装依赖，这里默认已经装了，先执行: <code>cd shay</code>切换到项目目录，然后执行<code>npm run dev</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd shay</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run dev</span><br></pre></td></tr></table></figure>
-<p>服务器启动成功则显示一条信息:</p>
-<p><code>I  Your application is running here: http://localhost:8080</code></p>
-<p>这表示你的应用程序运行在8080端口，在浏览器访问这个地址即可看到页面了，如果8080端口被占用了则会提示8081端口，以实际为准。</p>
-<p>以上~</p>
+        <p>由于是借鉴其它人博客再加上自己的理解，如果有说的不对的地方欢迎指正🤝，以下是整个流程的概览</p>
+<p><img src="https://shaylu.oss-cn-beijing.aliyuncs.com/1-2019.07.04.jpg" alt="概览"></p>
+<h1 id="一、DNS解析"><a href="#一、DNS解析" class="headerlink" title="一、DNS解析"></a>一、DNS解析</h1><p>由于用户在浏览器的地址栏输入的是网址，也就是我们说的域名，但是客户端实际访问的是指定IP的某个服务器，所以要先将域名解析成IP地址，也就是DNS解析。</p>
+<p>1.首先会查询浏览器的缓存记录，这个缓存记录有一定的实效性，若缓存过期则删除这条缓存，当浏览器查找到了这个域名的缓存记录则直接返回服务器IP地址，否则进入第二步骤。（各个浏览器缓存机制不通，以Chrome浏览器为例，它会缓存1000条结果，实效大概1分钟）</p>
+<p>2.若上一步骤没有查到浏览器缓存记录，则会查找hosts文件和操作系统的缓存。hosts文件各个操作系统都有，它的作用是将网址域名与对应的IP地址做一个关联映射，一旦找到，则立即返回IP地址。操作系统缓存也有时效性，猜测不同操作系统也有不同的处理方式，这里不做过深的研究。</p>
+<p>3.如果以上两步骤都没有获取到IP地址，则会通过域名解析服务器来查找IP。一台域名解析服务器会被地理位置临近的大量用户使用，一般常用的域名都会在这个服务器的缓存记录里找到（例如百度）,假如没有找到缓存记录，则以递归+迭代的方式来解析。假设没有做负载均衡的情况下，想要解析mail.google.com这个域名，则会经历以下过程：</p>
+<p><img src="https://shaylu.oss-cn-beijing.aliyuncs.com/2-2019.07.04.jpg" alt="域名解析过程"></p>
+<p>(1)首先先找到根域服务器，问：“请问你知道mail.google.com的IP地址吗？”，根域服务器查了一下，然后说：“我不知道mail.google.com的IP地址，但是我知道.com的服务器地址，你去他那问问吧”。</p>
+<p>(2)来到.com服务器，问：“请问你知道mail.google.com的IP地址吗？”，.com服务器查了一下，然后说：“我不知道mail.google.com的IP地址，但是我知道google.com的IP地址，你去他那问问吧”。</p>
+<p>(3)来到google.com服务器，问：“请问你知道mail.google.com的IP地址吗？”，google.com服务器查了一下，然后说：“我知道，IP是<strong><strong>***</strong></strong>”。得到IP地址后，它将一步步的返回，直到返回给浏览器，DNS解析结束。</p>
+<h1 id="二、负载均衡"><a href="#二、负载均衡" class="headerlink" title="二、负载均衡"></a>二、负载均衡</h1><p>当一台服务器无法支撑大量的用户访问时，则需要将用户的请求分摊到多个服务器上，这种做法就叫负载均衡（防止用户访问量过大超过服务器的最大负荷）。这里简单到介绍下Nginx负载均衡，Nginx是一款高性能的http服务器，具有占用内存少，稳定性高的优点。</p>
+<p>当一个用户的浏览器进行DNS解析的时候，如果目标域名配置了负载均衡的话，则会返回给浏览器负载均衡服务器的IP，负载均衡服务器根据自己设定的算法或规则将请求分配到不同到服务器上。</p>
+<p>Nginx默认支持RR轮转法和ip_hash法，前者会从头到尾依次访问服务器，例如我们用3台服务器做负载均衡，则访问顺序为服务器1，服务器2，服务器3，服务器1，服务器2，以此类推，而后者则对源IP使用hash函数确定应该转发到哪个Web服务器上，也能保证同一个IP的请求能发送到同一个Web服务器上实现会话粘连。</p>
+<p>举个例子，我在自己的浏览器上输入mail.google.com的域名，在DNS解析的时候，假设该域名配置了3个服务器做负载均衡，这时候负载均衡服务器给我分配到了服务器2，服务器2将响应报文返回给负载均衡服务器，负载均衡服务器再根据自己的过滤条件处理，最后返回给我的浏览器。<br><img src="https://shaylu.oss-cn-beijing.aliyuncs.com/3-2019.07.04.jpg" alt="负载均衡处理"></p>
+<h1 id="三、建立TCP连接"><a href="#三、建立TCP连接" class="headerlink" title="三、建立TCP连接"></a>三、建立TCP连接</h1><p>建立TCP连接的过程可以总结为“3次握手”：</p>
+<p>1.第一次握手，客户端向服务器端发送连接请求的报文</p>
+<p>2.第二次握手，服务器端收到请求后，同意建立连接，向客户端发送确认报文</p>
+<p>3.第三次握手，客户端收到服务器端的确认报文后，再次向服务器端发出报文，确认已收到确认报文</p>
+<p>为什么要3次握手？举个例子，我对你说：“你好，我们来通信吧”，你对我说：“好的，我们来通信吧”，然后我通知你：“收到，通信已经确认搭建”。假如我没有回最后的确认信息，在我收到你的信息后，突然改变注意出去玩了，没有通知你，这时候你以为我们还是在通信状态，就一直等我给你发送信息（其实我出去玩了），你给我发送信息（其实我没收到但是你不知道），等下次我想和你通信的时候，就乱套了。</p>
+<h1 id="四、发起HTTP请求"><a href="#四、发起HTTP请求" class="headerlink" title="四、发起HTTP请求"></a>四、发起HTTP请求</h1><p>http请求基于TCP协议，特点可以参考<a href="https://www.cnblogs.com/xuxinstyle/p/9813654.html" target="_blank" rel="noopener">这篇文章</a></p>
+<p>浏览器请求页面数据，服务器返回数据给浏览器，http请求结束</p>
+<h1 id="五、释放TCP连接"><a href="#五、释放TCP连接" class="headerlink" title="五、释放TCP连接"></a>五、释放TCP连接</h1><p>与建立TCP连接不同，释放TCP连接需要经历“4次挥手”：</p>
+<p>1.第一次挥手，浏览器向服务器发送释放连接报文</p>
+<p>2.第二次挥手，服务器收到释放报文后，发出确认报文，然后将服务器上未传送完的数据发送完</p>
+<p>3.第三次挥手，服务器数据传输完成后，向浏览器发送释放连接请求</p>
+<p>4.第四次挥手，浏览器收到报文后，发出确认，然后等待一段时间后，释放TCP连接</p>
+<h1 id="六、浏览器渲染页面"><a href="#六、浏览器渲染页面" class="headerlink" title="六、浏览器渲染页面"></a>六、浏览器渲染页面</h1><p>1.浏览器根据页面内容，生成DOM树，根据CSS内容，生成Rule树（规则树），调用JS执行引擎执行JS代码</p>
+<p>2.根据DOM树和Rule树生成Render树（呈现树）</p>
+<p>3.根据Render树渲染网页</p>
+<p>参考文档：</p>
+<p><a href="https://blog.csdn.net/dataiyangu/article/details/79946416" target="_blank" rel="noopener">https://blog.csdn.net/dataiyangu/article/details/79946416</a><br><a href="https://www.jianshu.com/p/0c8c7cecf946" target="_blank" rel="noopener">https://www.jianshu.com/p/0c8c7cecf946</a><br><a href="https://blog.csdn.net/m0_38121874/article/details/81990457" target="_blank" rel="noopener">https://blog.csdn.net/m0_38121874/article/details/81990457</a><br><a href="https://www.cnblogs.com/xuxinstyle/p/9813654.html" target="_blank" rel="noopener">https://www.cnblogs.com/xuxinstyle/p/9813654.html</a></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://singingcat.github.io">Shay</a>
-            </p><p>原文链接：<a href="https://singingcat.github.io/2019/02/14/1st/">https://singingcat.github.io/2019/02/14/1st/</a>
-            </p><p>发表日期：<a href="https://singingcat.github.io/2019/02/14/1st/">February 14th 2019, 4:56:51 pm</a>
-            </p><p>更新日期：<a href="https://singingcat.github.io/2019/02/14/1st/">February 15th 2019, 11:17:02 am</a>
+            </p><p>原文链接：<a href="https://singingcat.github.io/2019/07/02/3st/">https://singingcat.github.io/2019/07/02/3st/</a>
+            </p><p>发表日期：<a href="https://singingcat.github.io/2019/07/02/3st/">July 2nd 2019, 11:21:04 am</a>
+            </p><p>更新日期：<a href="https://singingcat.github.io/2019/07/02/3st/">July 4th 2019, 6:03:04 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -445,13 +442,13 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/03/17/2st/" title="基于element-ui框架上传图片到阿里云OSS">
-                    <div class="nextTitle">基于element-ui框架上传图片到阿里云OSS</div>
-                </a>
-            
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/03/17/2st/" title="基于element-ui框架上传图片到阿里云OSS">
+                    <div class="prevTitle">基于element-ui框架上传图片到阿里云OSS</div>
+                </a>
             
         </li>
     </ul>
@@ -580,7 +577,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、安装-node"><span class="toc-number">1.</span> <span class="toc-text">一、安装 node</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、-安装-vue-cli"><span class="toc-number">2.</span> <span class="toc-text">二、 安装 vue-cli</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、-初始化项目"><span class="toc-number">3.</span> <span class="toc-text">三、 初始化项目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、启动项目"><span class="toc-number">4.</span> <span class="toc-text">四、启动项目</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、DNS解析"><span class="toc-number">1.</span> <span class="toc-text">一、DNS解析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、负载均衡"><span class="toc-number">2.</span> <span class="toc-text">二、负载均衡</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、建立TCP连接"><span class="toc-number">3.</span> <span class="toc-text">三、建立TCP连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、发起HTTP请求"><span class="toc-number">4.</span> <span class="toc-text">四、发起HTTP请求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、释放TCP连接"><span class="toc-number">5.</span> <span class="toc-text">五、释放TCP连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、浏览器渲染页面"><span class="toc-number">6.</span> <span class="toc-text">六、浏览器渲染页面</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

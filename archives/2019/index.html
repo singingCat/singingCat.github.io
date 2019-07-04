@@ -346,6 +346,33 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/07/02/3st/">
+            
+                <span>浏览器从输入网址到页面呈现的过程</span>
+        </a>
+        <div class="abstract-content">
+            由于是借鉴其它人博客再加上自己的理解，如果有说的不对的地方欢迎指正🤝，以下是整个流程的概览
+
+一、DNS解析由于用户在浏览器的地址栏输入的是网址，也就是我们说的域名，但是客户端实际访问的是指定IP的某个服务器，所以要先将域名解析成IP地址，也就是DNS解析。
+1.首先会查询浏览器的缓存记录，这个缓存记录有一定的实效性，若缓存过期则删除这条缓存，当浏览器查找到了这个域名的缓存记录则直接返回服务器IP地址，否则进入第二步骤。（各个浏览器缓存机制不通，以Chrome浏览器为例，它会缓存1000条结果，实效大概1分钟）
+2.若上一步骤没有查到浏览器缓存记录，则会查找hosts文件和操作系统的缓...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/02</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/03/17/2st/">
             
                 <span>基于element-ui框架上传图片到阿里云OSS</span>
@@ -523,9 +550,18 @@ node安装地址在这里
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 2
+        Total : 3
         </div>
         <!-- search  -->
         
@@ -538,6 +574,11 @@ node安装地址在这里
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href="/2019/07/02/3st/">浏览器从输入网址到页面呈现的过程</a>
+        </li>
     
     
         <li class="archive-post-item">
